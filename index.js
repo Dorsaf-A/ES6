@@ -10,15 +10,16 @@ let pets = [
 
 let getAge = (pet) => {return new Date().getFullYear() - pet.bornOn};
 
-var petsWithAge = [];
+let petsWithAge = [...pets];
+// console.log(petsWithAge);
 // for (var i = 0; i < pets.length; i++) {
 //   var pet = pets[i];
 //   pet.age = getAge(pet);
 
 //   petsWithAge.push(pet);
 // }
-petsWithAge = pets.map((a) => {a = {...a, age : getAge(a)}})
-console.log(petsWithAge);
+petsWithAge = petsWithAge.map((a) => {{a.age = getAge(a)}})
+console.log(pets);
 
 let dogs = [];
 // for (var i = 0; i < pets.length; i++) {
@@ -39,4 +40,4 @@ let jasper;
 // }
 
 jasper = pets.find(a => a.name === "Jasper")
-console.log(`Jasper is ${jasper} years old`);
+console.log(`Jasper is ${jasper.age} years old`);
